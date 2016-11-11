@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,41 +19,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1V-MS-ECi">
-                                <rect key="frame" x="36" y="200" width="248" height="32"/>
-                                <color key="backgroundColor" red="0.047058823529411764" green="0.47450980392156861" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="True"/>
-                                <connections>
-                                    <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pHS-se-fli"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AS4-HX-g9f">
-                                <rect key="frame" x="36" y="263" width="248" height="32"/>
-                                <color key="backgroundColor" red="0.047058823530000002" green="0.47450980390000003" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="False"/>
-                                <connections>
-                                    <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qfk-Z2-crr"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3V-ih-1Ky">
-                                <rect key="frame" x="36" y="80" width="248" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0KA-xP-wAr"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3V-ih-1Ky">
+                                <string key="text">The Titanic departed from the United Kingdom, where was it supposed to arrive? The Titanic departed from the United Kingdom, where was it supposed to arrive?</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K17-uy-MvB">
-                                <rect key="frame" x="36" y="374" width="248" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.57647058823529407" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="lKK-Ea-DhE"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Play Again"/>
@@ -64,33 +34,70 @@
                                     <action selector="playAgain" destination="BYZ-38-t0r" eventType="touchUpInside" id="klz-B2-JAN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAz-z8-hBu">
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Option1"/>
+                                <connections>
+                                    <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t69-OX-r2r"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHV-kx-GGe">
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Option2"/>
+                                <connections>
+                                    <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iiT-um-x80"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k11-XJ-jmY">
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Option3"/>
+                                <connections>
+                                    <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z6y-l9-zIF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfJ-Tk-WpT">
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Option4"/>
+                                <connections>
+                                    <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fRM-ZH-jdx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.031372549019607843" green="0.16862745098039217" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="J1V-MS-ECi" secondAttribute="trailing" constant="20" id="1MW-EN-IXQ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K17-uy-MvB" secondAttribute="bottom" constant="56" id="7Xm-O8-Rkc"/>
-                            <constraint firstItem="J1V-MS-ECi" firstAttribute="top" secondItem="I3V-ih-1Ky" secondAttribute="bottom" constant="70" id="Fxs-uH-dh9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AS4-HX-g9f" secondAttribute="trailing" constant="20" id="J4j-He-6EL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="K17-uy-MvB" secondAttribute="trailing" constant="20" id="6De-FH-B3W"/>
+                            <constraint firstItem="DfJ-Tk-WpT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="AC4-RE-GHk"/>
+                            <constraint firstItem="lHV-kx-GGe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Few-8l-A6F"/>
+                            <constraint firstItem="DfJ-Tk-WpT" firstAttribute="top" secondItem="k11-XJ-jmY" secondAttribute="bottom" constant="20" id="IxY-Uu-ScW"/>
+                            <constraint firstItem="I3V-ih-1Ky" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="JlY-TD-vNa"/>
                             <constraint firstItem="I3V-ih-1Ky" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="OWe-8S-oX5"/>
+                            <constraint firstAttribute="trailing" secondItem="HAz-z8-hBu" secondAttribute="trailing" constant="20" id="P5z-Q7-hfq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="I3V-ih-1Ky" secondAttribute="trailing" constant="20" id="PSR-kF-Jy0"/>
-                            <constraint firstItem="AS4-HX-g9f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="bef-SM-wCC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="K17-uy-MvB" secondAttribute="trailing" constant="20" id="cGK-LD-7oL"/>
-                            <constraint firstItem="I3V-ih-1Ky" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="cI0-zD-uMs"/>
-                            <constraint firstItem="K17-uy-MvB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="gJO-vY-p4z"/>
-                            <constraint firstItem="AS4-HX-g9f" firstAttribute="top" secondItem="J1V-MS-ECi" secondAttribute="bottom" constant="31" id="sIK-Ot-mmn"/>
-                            <constraint firstItem="J1V-MS-ECi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="vX6-Qa-YKA"/>
+                            <constraint firstItem="HAz-z8-hBu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="UeM-ED-yRL"/>
+                            <constraint firstItem="K17-uy-MvB" firstAttribute="top" secondItem="DfJ-Tk-WpT" secondAttribute="bottom" constant="50" id="apk-hI-9tU"/>
+                            <constraint firstAttribute="trailing" secondItem="k11-XJ-jmY" secondAttribute="trailing" constant="20" id="bDA-QH-VFQ"/>
+                            <constraint firstAttribute="trailing" secondItem="lHV-kx-GGe" secondAttribute="trailing" constant="20" id="c7Y-m5-whh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K17-uy-MvB" secondAttribute="bottom" constant="30" id="hjc-we-f9S"/>
+                            <constraint firstItem="lHV-kx-GGe" firstAttribute="top" secondItem="HAz-z8-hBu" secondAttribute="bottom" constant="20" id="kvW-5e-fAd"/>
+                            <constraint firstAttribute="trailing" secondItem="DfJ-Tk-WpT" secondAttribute="trailing" constant="20" id="ltY-qK-f0a"/>
+                            <constraint firstItem="k11-XJ-jmY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="sOm-Ny-PDy"/>
+                            <constraint firstItem="K17-uy-MvB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="xFN-lS-SAo"/>
+                            <constraint firstItem="k11-XJ-jmY" firstAttribute="top" secondItem="lHV-kx-GGe" secondAttribute="bottom" constant="20" id="xzG-u4-WOW"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="falseButton" destination="AS4-HX-g9f" id="Xfj-Ws-1ey"/>
+                        <outlet property="option1Button" destination="HAz-z8-hBu" id="LOd-IF-jww"/>
+                        <outlet property="option2Button" destination="lHV-kx-GGe" id="ybM-21-7dA"/>
+                        <outlet property="option3Button" destination="k11-XJ-jmY" id="zZz-Iq-xft"/>
+                        <outlet property="option4Button" destination="DfJ-Tk-WpT" id="VkF-ew-0iJ"/>
                         <outlet property="playAgainButton" destination="K17-uy-MvB" id="0Bx-Cm-ye0"/>
                         <outlet property="questionField" destination="I3V-ih-1Ky" id="7UI-o2-ATi"/>
-                        <outlet property="trueButton" destination="J1V-MS-ECi" id="iZW-hy-ROl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.875" y="138.75"/>
         </scene>
     </scenes>
 </document>
