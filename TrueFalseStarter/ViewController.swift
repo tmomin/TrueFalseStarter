@@ -7,18 +7,15 @@
 //
 
 import UIKit
-import GameKit
-import AudioToolbox
 
 class ViewController: UIViewController {
     
-    let trivia = TriviaQuestions()
-    let questionsPerRound = 4
+    let trueFalseController = TrueFalseController()
     var questionsAsked = 0
+    let questionsPerRound = 4
     var correctQuestions = 0
-    var indexOfSelectedQuestion: Int = 0
-    
-    var gameSound: SystemSoundID = 0
+    var questionsBank = [String]()
+    var checkDupe = false
     
     @IBOutlet weak var questionField: UILabel!
     @IBOutlet weak var option1Button: UIButton!
@@ -30,9 +27,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadGameStartSound()
+        trueFalseController.loadGameStartSound()
+        trueFalseController.loadCorrectSound()
+        trueFalseController.loadIncorrectSound()
         // Start game
-        playGameStartSound()
+        trueFalseController.playGameStartSound()
         displayQuestion()
     }
 
@@ -42,7 +41,7 @@ class ViewController: UIViewController {
     }
     
     func displayQuestion() {
-        let triviaQuestion = trivia.getRandomTrivia()
+        let triviaQuestion = trueFalseController.getRandomTrivia()
         questionField.text = triviaQuestion["Question"]
         option1Button.setTitle(triviaQuestion["Option1"], for: .normal)
         option2Button.setTitle(triviaQuestion["Option2"], for: .normal)
@@ -64,37 +63,7 @@ class ViewController: UIViewController {
         questionField.text = "Way to go!\nYou got \(correctQuestions) out of \(questionsPerRound) correct!"
         
     }
-    
-    @IBAction func checkAnswer(_ sender: UIButton) {
-        // Increment the questions asked counter
-        questionsAsked += 1
-        
-        // Check if button press is the correct answer
-        let correctAnswer = trivia.getTriviaAnswer()["Answer"]
-        
-        if ((sender === option1Button) && "Option1" == correctAnswer) {
-            print("Your pressed Option1")
-            correctQuestions += 1
-            questionField.text = "Correct!"
-        } else if ((sender === option2Button) && "Option2" == correctAnswer) {
-            print("Your pressed Option2")
-            correctQuestions += 1
-            questionField.text = "Correct!"
-        } else if ((sender === option3Button) && "Option3" == correctAnswer) {
-            print("Your pressed Option3")
-            correctQuestions += 1
-            questionField.text = "Correct!"
-        } else if ((sender === option4Button) && "Option4" == correctAnswer) {
-            print("Your pressed Option4")
-            correctQuestions += 1
-            questionField.text = "Correct!"
-        } else {
-            questionField.text = "Sorry, wrong answer!"
-        }
-        
-        loadNextRoundWithDelay(seconds: 2)
-    }
-    
+
     func nextRound() {
         if questionsAsked == questionsPerRound {
             // Game is over
@@ -105,6 +74,56 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func checkAnswer(_ sender: UIButton) {
+        // Increment the questions asked counter
+        questionsAsked += 1
+        
+        // Check if button press is the correct answer
+        
+        let correctAnswer = trueFalseController.getTriviaAnswer()["Answer"]
+        
+        if ((sender === option1Button) && "Option1" == correctAnswer) {
+            correctQuestions += 1
+            questionField.text = "Correct!"
+            trueFalseController.playCorrectSound()
+            option1Button.backgroundColor = UIColor(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)
+        } else if ((sender === option2Button) && "Option2" == correctAnswer) {
+            correctQuestions += 1
+            questionField.text = "Correct!"
+            trueFalseController.playCorrectSound()
+            option2Button.backgroundColor = UIColor(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)
+        } else if ((sender === option3Button) && "Option3" == correctAnswer) {
+            correctQuestions += 1
+            questionField.text = "Correct!"
+            trueFalseController.playCorrectSound()
+            option3Button.backgroundColor = UIColor(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)
+        } else if ((sender === option4Button) && "Option4" == correctAnswer) {
+            correctQuestions += 1
+            questionField.text = "Correct!"
+            trueFalseController.playCorrectSound()
+            option4Button.backgroundColor = UIColor(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)
+        } else {
+            questionField.text = "Sorry, wrong answer!"
+            trueFalseController.playIncorrectSound()
+            switch correctAnswer! {
+            case "Option1":
+                option1Button.backgroundColor = UIColor(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)
+            case "Option2":
+                option2Button.backgroundColor = UIColor(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)
+            case "Option3":
+                option3Button.backgroundColor = UIColor(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)
+            case "Option4":
+                option4Button.backgroundColor = UIColor(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)
+            default:
+                break
+            }
+        }
+        
+        loadNextRoundWithDelay(seconds: 2)
+    }
+    
+    
+    
     @IBAction func playAgain() {
         // Show the answer buttons
         option1Button.isHidden = false
@@ -114,13 +133,12 @@ class ViewController: UIViewController {
         
         questionsAsked = 0
         correctQuestions = 0
+        questionsBank.removeAll()
+        checkDupe = false
         nextRound()
     }
     
-
-    
     // MARK: Helper Methods
-    
     func loadNextRoundWithDelay(seconds: Int) {
         // Converts a delay in seconds to nanoseconds as signed 64 bit integer
         let delay = Int64(NSEC_PER_SEC * UInt64(seconds))
@@ -129,18 +147,14 @@ class ViewController: UIViewController {
         
         // Executes the nextRound method at the dispatch time on the main queue
         DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
+            self.option1Button.backgroundColor = UIColor(red: 0.0, green: 255.0, blue: 255.0, alpha: 1.0)
+            self.option2Button.backgroundColor = UIColor(red: 0.0, green: 255.0, blue: 255.0, alpha: 1.0)
+            self.option3Button.backgroundColor = UIColor(red: 0.0, green: 255.0, blue: 255.0, alpha: 1.0)
+            self.option4Button.backgroundColor = UIColor(red: 0.0, green: 255.0, blue: 255.0, alpha: 1.0)
+            self.checkDupe = false
             self.nextRound()
         }
     }
     
-    func loadGameStartSound() {
-        let pathToSoundFile = Bundle.main.path(forResource: "GameSound", ofType: "wav")
-        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
-        AudioServicesCreateSystemSoundID(soundURL as CFURL, &gameSound)
-    }
-    
-    func playGameStartSound() {
-        AudioServicesPlaySystemSound(gameSound)
-    }
 }
 

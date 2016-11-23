@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		361900961DD8E88100E7CA80 /* TrueFalseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361900951DD8E88100E7CA80 /* TrueFalseController.swift */; };
+		3676053E1DE5FEB2006D2B43 /* no-4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3676053D1DE5FEB2006D2B43 /* no-4.wav */; };
+		3690BFCD1DE5FF280047E17D /* you-got-it-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3690BFCC1DE5FF280047E17D /* you-got-it-2.wav */; };
 		36FBA5701DCD9A5D00E87803 /* TriviaQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBA56F1DCD9A5D00E87803 /* TriviaQuestions.swift */; };
 		97093D3C1C913506001275BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3B1C913506001275BC /* AppDelegate.swift */; };
 		97093D3E1C913506001275BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3D1C913506001275BC /* ViewController.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		361900951DD8E88100E7CA80 /* TrueFalseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrueFalseController.swift; sourceTree = "<group>"; };
+		3676053D1DE5FEB2006D2B43 /* no-4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "no-4.wav"; sourceTree = "<group>"; };
+		3690BFCC1DE5FF280047E17D /* you-got-it-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "you-got-it-2.wav"; sourceTree = "<group>"; };
 		36FBA56F1DCD9A5D00E87803 /* TriviaQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriviaQuestions.swift; sourceTree = "<group>"; };
 		97093D381C913506001275BC /* TrueFalseStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueFalseStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97093D3B1C913506001275BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,8 +70,11 @@
 				97093D421C913506001275BC /* Assets.xcassets */,
 				97093D441C913506001275BC /* LaunchScreen.storyboard */,
 				97093D471C913506001275BC /* Info.plist */,
+				3676053D1DE5FEB2006D2B43 /* no-4.wav */,
+				3690BFCC1DE5FF280047E17D /* you-got-it-2.wav */,
 				97093D521C932116001275BC /* GameSound.wav */,
 				36FBA56F1DCD9A5D00E87803 /* TriviaQuestions.swift */,
+				361900951DD8E88100E7CA80 /* TrueFalseController.swift */,
 			);
 			path = TrueFalseStarter;
 			sourceTree = "<group>";
@@ -129,10 +138,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3676053E1DE5FEB2006D2B43 /* no-4.wav in Resources */,
 				97093D531C932116001275BC /* GameSound.wav in Resources */,
 				97093D461C913506001275BC /* LaunchScreen.storyboard in Resources */,
 				97093D431C913506001275BC /* Assets.xcassets in Resources */,
 				97093D411C913506001275BC /* Main.storyboard in Resources */,
+				3690BFCD1DE5FF280047E17D /* you-got-it-2.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +157,7 @@
 				36FBA5701DCD9A5D00E87803 /* TriviaQuestions.swift in Sources */,
 				97093D3E1C913506001275BC /* ViewController.swift in Sources */,
 				97093D3C1C913506001275BC /* AppDelegate.swift in Sources */,
+				361900961DD8E88100E7CA80 /* TrueFalseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

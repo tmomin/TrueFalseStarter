@@ -8,10 +8,8 @@
 
 import GameKit
 
-var indexValue = 0
-
 struct TriviaQuestions {
-    let trivia: [[String : String]] = [
+    let questions: [[String : String]] = [
         ["Question": "This was the only US President to serve more than two consecutive terms.",
          "Option1": "George Washington",
          "Option2": "Franklin D. Roosevelt",
@@ -74,13 +72,13 @@ struct TriviaQuestions {
          "Answer": "Option4"]
     ]
     
-    func getRandomTrivia() -> [String: String] {
-        let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: trivia.count)
-        indexValue = randomNumber
-        return(trivia[randomNumber])
-    }
-    
-    func getTriviaAnswer() -> [String: String] {
-        return(trivia[indexValue])
-    }
+//    func getRandomTrivia() -> [String: String] {
+//        let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: trivia.count)
+//        indexValue = randomNumber
+//        return(trivia[randomNumber])
+//    }
+//    
+//    func getTriviaAnswer() -> [String: String] {
+//        return(trivia[indexValue])
+//    }
 }
